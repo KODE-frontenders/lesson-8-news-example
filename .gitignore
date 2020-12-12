@@ -1,0 +1,15 @@
+storybook/storyLoader.js
+node_modules/**/*
+.expo/*
+npm-debug.*
+yarn-error.log
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+
+# macOS
+.DS_Store

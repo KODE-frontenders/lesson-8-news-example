@@ -1,0 +1,1 @@
+export { NewsDetailsScreen } from './news-details-screen/news-details-screen'
