@@ -1,0 +1,9 @@
+# expo
+.expo
+.expo-shared
+.vscode
+
+# .lock
+*.lock
+
+node_modules
