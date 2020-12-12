@@ -12,7 +12,8 @@
     "typeRoots": ["types", "node_modules/@types"],
     "paths": {
       "@ui/*": ["src/ui/*"],
-      "@api/*": ["src/api/*"],
+      "@shared/*": ["src/shared/*"],
+      "@store/*": ["src/store/*"],
       "@navigation/*": ["src/navigation/*"],
       "@features/*": ["src/features/*"]
     }

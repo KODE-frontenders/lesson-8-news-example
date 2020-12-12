@@ -1,9 +1,10 @@
+import { RouteProp } from '@react-navigation/native'
 import { StackNavigationProp } from '@react-navigation/stack'
 
 export type RootStackParamList = {
   Home: undefined
-  Details: undefined
-  Counter: undefined
+  News: undefined
+  NewsDetails: { id: number }
 }
 
 export type HomeScreenNavigationProp = StackNavigationProp<
@@ -11,12 +12,17 @@ export type HomeScreenNavigationProp = StackNavigationProp<
   'Home'
 >
 
-export type DetailsScreenNavigationProp = StackNavigationProp<
+export type NewsScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
-  'Details'
+  'News'
 >
 
-export type CounterScreenNavigationProp = StackNavigationProp<
+export type NewsDetailsScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
-  'Counter'
+  'NewsDetails'
+>
+
+export type NewsDetailsScreenRouteProp = RouteProp<
+  RootStackParamList,
+  'NewsDetails'
 >

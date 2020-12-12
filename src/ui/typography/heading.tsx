@@ -1,8 +1,8 @@
-import { styled } from "@ui/theme";
+import { styled } from '@ui/theme'
 
 type Props = {
-  color?: string;
-};
+  color?: string
+}
 
 export const Heading = styled.Text.attrs(() => ({
   allowFontScaling: false,
@@ -11,5 +11,5 @@ export const Heading = styled.Text.attrs(() => ({
   line-height: 28px;
   letter-spacing: 0.3px;
   font-family: ${({ theme }) => theme.fontFamily.arialBold};
-  color: ${({ theme, color }) => color || theme.colors.foreground.primary};
-`;
+  color: ${({ theme, color }) => color ?? theme.colors.foreground.primary};
+`

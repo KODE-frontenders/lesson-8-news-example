@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
 import { StateType } from 'typesafe-actions'
 
-import { counterReducer } from '@features/counter/reducer'
+import { newsReducer } from '@features/news/reducer'
 
 export const rootReducer = combineReducers({
-  counter: counterReducer,
+  news: newsReducer,
 })
 
 export type RootState = StateType<typeof rootReducer>

@@ -1,17 +1,17 @@
-import React from "react";
-import { SafeAreaView } from "react-native";
-import { Provider } from "react-redux";
-import { PersistGate } from "redux-persist/integration/react";
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import { useFonts } from "@use-expo/font";
-import { AppLoading } from "expo";
+import React from 'react'
+import { SafeAreaView } from 'react-native'
+import { Provider } from 'react-redux'
+import { PersistGate } from 'redux-persist/integration/react'
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
+import { useFonts } from '@use-expo/font'
+import { AppLoading } from 'expo'
 
-import { HomeScreen } from "@features/home";
-import { DetailsScreen } from "@features/details";
-import { CounterScreen } from "@features/counter";
-import { Button } from "@ui/atoms";
-import { ThemeProvider, lightTheme } from "@ui/theme";
+import { HomeScreen } from '@features/home'
+import { NewsDetailsScreen } from '@features/news-details'
+import { NewsScreen } from '@features/news'
+import { Button } from '@ui/atoms'
+import { ThemeProvider, lightTheme } from '@ui/theme'
 
 import Storybook from './storybook'
 import { configureStore } from './src/store'
@@ -20,19 +20,19 @@ const Stack = createStackNavigator()
 const { store, persistor } = configureStore()
 
 const customFonts = {
-  ArialRegular: require("./assets/fonts/ArialRegular.ttf"),
-  ArialBold: require("./assets/fonts/ArialBold.ttf"),
-  OpenSansRegular: require("./assets/fonts/OpenSansRegular.ttf"),
-  OpenSansBold: require("./assets/fonts/OpenSansBold.ttf"),
-};
+  ArialRegular: require('./assets/fonts/ArialRegular.ttf'),
+  ArialBold: require('./assets/fonts/ArialBold.ttf'),
+  OpenSansRegular: require('./assets/fonts/OpenSansRegular.ttf'),
+  OpenSansBold: require('./assets/fonts/OpenSansBold.ttf'),
+}
 
 const App: React.FC = () => {
   const [showApp, setShowApp] = React.useState(false)
 
-  const [isLoaded] = useFonts(customFonts);
+  const [isLoaded] = useFonts(customFonts)
 
   if (!isLoaded) {
-    return <AppLoading />;
+    return <AppLoading />
   }
 
   if (showApp) {
@@ -42,9 +42,21 @@ const App: React.FC = () => {
           <ThemeProvider theme={lightTheme}>
             <NavigationContainer>
               <Stack.Navigator initialRouteName="Home">
-                <Stack.Screen name="Home" component={HomeScreen} />
-                <Stack.Screen name="Details" component={DetailsScreen} />
-                <Stack.Screen name="Counter" component={CounterScreen} />
+                <Stack.Screen
+                  name="Home"
+                  component={HomeScreen}
+                  options={{ title: 'Главная' }}
+                />
+                <Stack.Screen
+                  name="News"
+                  component={NewsScreen}
+                  options={{ title: 'Новости' }}
+                />
+                <Stack.Screen
+                  name="NewsDetails"
+                  component={NewsDetailsScreen}
+                  options={{ title: 'Новость' }}
+                />
               </Stack.Navigator>
             </NavigationContainer>
           </ThemeProvider>
